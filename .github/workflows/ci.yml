@@ -15,10 +15,9 @@ jobs:
       - name: Clone content-schemas
         uses: actions/checkout@v4
         with:
-          repository: publishing_platform/publishing-api
+          repository: publishing-platform/publishing-api
           ref: main
-          path: tmp/publishing-api 
-          token: ${{ secrets.PUBLISHING_PLATFORM_CI_GITHUB_API_TOKEN }}     
+          path: tmp/publishing-api   
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
