@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.summary = "Gem to work with the Publishing Platform content schemas"
   spec.description = "Gem to work with the Publishing Platform content schemas"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.0"
+  spec.required_ruby_version = ">= 3.1"
 
   spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir = "exe"
@@ -20,5 +20,7 @@ Gem::Specification.new do |spec|
   # This should be kept in sync with the json-schema version of publishing-api.
   spec.add_dependency "json-schema", ">= 2.8", "< 4.4"
 
+  spec.add_development_dependency "climate_control"
   spec.add_development_dependency "publishing_platform_rubocop"
+  spec.add_development_dependency "simplecov"
 end
