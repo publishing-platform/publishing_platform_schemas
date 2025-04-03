@@ -2,6 +2,7 @@
 
 require_relative "publishing_platform_schemas/version"
 require_relative "publishing_platform_schemas/schema"
+require_relative "publishing_platform_schemas/example"
 
 module PublishingPlatformSchemas
   def self.content_schema_dir=(path_to_schemas)
