@@ -42,6 +42,7 @@ module PublishingPlatformSchemas
         links_schema: "#{schema_name}/publisher/links.json",
         frontend_schema: "#{schema_name}/frontend/schema.json",
         publisher_schema: "#{schema_name}/publisher/schema.json",
+        notification_schema: "#{schema_name}/notification/schema.json",
       }[type]
     end
 

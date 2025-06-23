@@ -13,6 +13,10 @@ RSpec.describe PublishingPlatformSchemas::Schema do
     it "returns a publisher schema schema by name" do
       expect(PublishingPlatformSchemas::Schema.find(publisher_schema: "answer")).to be_a(Hash)
     end
+
+    it "returns a notification schema schema by name" do
+      expect(PublishingPlatformSchemas::Schema.find(notification_schema: "answer")).to be_a(Hash)
+    end
   end
 
   describe ".all" do
@@ -28,7 +32,7 @@ RSpec.describe PublishingPlatformSchemas::Schema do
       schema_names = PublishingPlatformSchemas::Schema.schema_names
 
       expect(schema_names).to be_a(Array)
-      expect(schema_names.size > 3).to eql(true)
+      expect(schema_names.size > 5).to eql(true)
     end
   end
 end
