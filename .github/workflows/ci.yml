@@ -4,12 +4,11 @@ on: [push, pull_request]
 
 jobs:  
   # This matrix job runs the test suite against multiple Ruby versions
-  # test_matrix:
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       ruby: [3.2, 3.3]
-  blah:
+  test_matrix:
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: [3.2, 3.3]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,8 +21,7 @@ jobs:
           token: ${{ secrets.PUBLISHING_PLATFORM_CI_GITHUB_API_TOKEN }}     
       - uses: ruby/setup-ruby@v1
         with:
-          # ruby-version: ${{ matrix.ruby }}
-          ruby-version: 3.2
+          ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
       - run: bundle exec rake
         env:
@@ -33,7 +31,7 @@ jobs:
   # So instead we define `test` as a dummy job which only runs after the preceding `test_matrix` checks have passed.
   # Solution inspired by: https://github.community/t/status-check-for-a-matrix-jobs/127354/3
   test:
-    needs: blah
+    needs: test_matrix
     runs-on: ubuntu-latest
     steps:
       - run: echo "All matrix tests have passed 🚀"
