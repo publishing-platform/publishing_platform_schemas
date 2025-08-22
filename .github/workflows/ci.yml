@@ -18,7 +18,7 @@ jobs:
           repository: publishing-platform/publishing-api
           ref: main
           path: tmp/publishing-api 
-          token: ${{ secrets.PUBLISHING_PLATFORM_CI_GITHUB_API_TOKEN }}     
+          token: 'sadadadasdasd'   
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
