@@ -11,8 +11,9 @@ jobs:
         ruby: [3.2, 3.3]
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
       - uses: actions/checkout@v4
-      - name: Clone content-schemas
+      - name: Checkout Publishing API (for Content Schemas)
         uses: actions/checkout@v4
         with:
           repository: publishing-platform/publishing-api
