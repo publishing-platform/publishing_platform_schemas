@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   # This should be kept in sync with the json-schema version of publishing-api.
   spec.add_dependency "json-schema", ">= 2.8", "< 6.2"
 
-  spec.add_development_dependency "climate_control"
-  spec.add_development_dependency "publishing_platform_rubocop"
-  spec.add_development_dependency "simplecov"
+  spec.add_development_dependency "climate_control", "~> 1.2"
+  spec.add_development_dependency "publishing_platform_rubocop", "~> 0.2"
+  spec.add_development_dependency "simplecov", "~> 0.22"
 end
